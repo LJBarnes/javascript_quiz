@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>JavaScript Quiz</title>
+</head>
+
+<body>
+    <row>
+        <column="col-sm-12">
+            <div class="header">
+                <h5 class="highScoreView">View Highscores</h5>
+                <h5 class="timeText">Time:</h5>
+                <h5 class="timer"></h5>
+            </div>
+            </column>
+    </row>
+    <row>
+        <column="col-sm-12">
+            <div class="quizStart">
+                <h2>Coding Quiz Challenge</h2>
+                <p> Try to answer the following code-related questions within the time limit. Keep in mind that the
+                    incorrect
+                    answers will penalize your score/time by fifteen seconds!</p>
+                <button class="startButton">Start Quiz</button>
+            </div>
+            </column>
+            <column="col-sm-12">
+                <div id="modalDiv" class="modal">
+                    <div class="modalContent">
+                        <div class="modalHeader">
+                            
+                            <h2 id="question"> Question Here
+                            </h2>
+                        </div>
+                        <div class="modalBody">
+                            <button class="answerBtn" id="answer1">Answer1</button>
+                            <br>
+                            <button class="answerBtn" id="answer2">Answer2</button>
+                            <br>
+                            <button class="answerBtn" id="answer2">Answer3</button>
+                            <br>
+                            <button class="answerBtn" id="answer4">Answer4</button>
+                        </div>
+                    </div>
+                </div>
+                </column>
+                <row>
+                    <column="col-sm-12">
+                    <!-- displays if answers are right or wrong/probably with else/if statement -->
+                    <div class="answerDisplay">
+                        
+                    </div>
+                    </column>
+                </row>
+    </row>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

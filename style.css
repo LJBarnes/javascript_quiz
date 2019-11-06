@@ -1,0 +1,49 @@
+
+.header {
+    margin: 0 auto;
+    width: 80%
+}
+.highScoreView {
+    display: inline-block;    
+}
+
+.timeText {
+    Float: right;
+}
+.timer {
+    float: right;
+    }
+
+.quizStart {
+    text-align: center;
+    margin: 0 auto;
+    width: 400px;
+    height: 600px;
+    clear: both;
+}
+
+.startButton {
+    background: purple;
+    color: white;
+}
+
+.modal {
+    display: none;  
+  }
+    
+  .modalContent {
+    position: relative;
+    background-color: #fefefe;
+    margin: 0 auto;
+    width: 400px;
+    height: 600px;
+  }
+
+  .answerBtn {
+      background: purple;
+      color: white;
+      margin-top: 5px;
+      margin-bottom: 5px;
+  }
+
+  
