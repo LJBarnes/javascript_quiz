@@ -12,18 +12,18 @@ var questions = [
       answer: "parentheses"
     },
     {
-        title: "Which of the following functions converts a string to all lowercase letters?",
-        choices: ["toLocateLowerCase()", "toLowerCase()", "toString()", "makeLowercase()"],
-        answer: "toLowerCase()"
+      title: "Which of the following functions converts a string to all lowercase letters?",
+      choices: ["toLocateLowerCase()", "toLowerCase()", "toString()", "makeLowercase()"],
+      answer: "toLowerCase()"
     },
     {
-        title: "What is the HTML tag that allows you to write JavaScript? ",
-        choices: ["<scripted>","<script>", "<js>", "<javascript>"],
-        answer: "<javascript>"
+      title: "What is the HTML tag that allows you to write JavaScript? ",
+      choices: ["scripted", "script", "j", "javascripts"],
+      answer: "script"
     },
     {
-        title: "Which syntax is correct for displaying an alert that says hello?",
-        choices: ["alert(&#34hello&#34);", "displayMessage(U+0022helloU+0022)", "alert(hello)", "popup(U+0022helloU+0022)"],
-        answer: "alert(&#34helloU+&#34)"
+      title: "Some question here TBD",
+      choices: ["Answer", "Choice", "Right Answer", "Another Choice"],
+      answer: "Right Answer"
     },
   ];
