@@ -8,16 +8,17 @@ var timeText = document.querySelector(".timeText");
 var rightOrWrong = document.querySelector("#answerDisplay");
 var questionDisplay = document.querySelector("#questionh2");
 var questionIndex = 0;
-var timeLeft = 75;
-var lastQuestion = 0;
 var timeInterval
+var timeLeft = questions.length *15;
+var gameOver = document.querySelector("#endOfGame")
+var gameend = false;
 
 // Landing Page/Start Quiz:
 startBtn.addEventListener("click", startQuiz);
 
 function startQuiz() {
 
-
+gameend = false;
   var timeInterval = setInterval(function () {
     timer.textContent = ("Time: ") + timeLeft;
     timeLeft--;
@@ -27,9 +28,10 @@ function startQuiz() {
       timer.textContent = "Time: 0";
       clearInterval(timeInterval);
     }
-
-    
-
+    if (gameend === true){
+      clearInterval(timeInterval);
+      }
+       
   }, 1000);
 
   displayQuestion();
@@ -56,6 +58,13 @@ function choiceSelected(event) {
   var answer = question.answer;
   var selectedAnswer = event.target;
   
+  questionIndex++;
+  if (questionIndex >= questions.length) {
+       gameend =true;
+      endOfGame();
+    return;
+  }
+
   if (selectedAnswer.innerHTML === answer) {
     // display "Right :)" in question/answer Div
     rightOrWrong.textContent = "Right :)";
@@ -67,34 +76,37 @@ function choiceSelected(event) {
     rightOrWrong.textContent = "Wrong :(";
   }
   
-  questionIndex++;
-  if (questionIndex === questions.length) {
-        clearInterval(timeInterval);
-        // endGame(); make a function for endgame that displays input form etc.
-      }
-  ;
-
-
-
   console.log(event.target);
   console.log("correct answer: " + answer);
 
-
-
-  // lastQuestion++;
-  
   displayQuestion();
   // endOfGame();
+}
 
-
+function endOfGame() {
+  questionh2.style.display="none";
+  popUpBody.style.display="none";
+  answerDisplay.style.display="none";
+  gameOverDiv.style.display="block";
 }
 
 //DONE-set an event listener on the buttons to check for the correct answer
 // DONE-if the answer is incorrect display incorrect and subtract 5 seconds
 // DONE -if the answer is correct display correct
 // DONE-but no matter what, go to the next question
-// NOT SURE -- if there is no other question, or if the time has run out, then stop timer the game is over
-// when game is over display score and input box for user to put name and display go back button. 
+// DONE-- if there is no other question, or if the time has run out, then stop timer the game is over
+// DONE-when game is over display score and input box for user to put name and display go back button. 
+    // create a new div(#gaveOverDiv),
+    // grab new div in JS
+        // questionh2.style.display="none";
+        // popUpBody.style.display="none";
+        //  gameOverDiv.style.display="block";
+        // in endOfGame ()---
+            // display score (timeLeft) and store it in local
+            // create an input field for initials
+            // create a submit button
+            // when SUBMIT store user's initials in local
+
 // Store input and score in local storage
 // Display high score and initials when High Scores is clicked (get from local storage)
 // Add "go back" button to high score view and 
