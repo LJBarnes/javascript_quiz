@@ -31,31 +31,49 @@
             </div>
             </column>
             <column="col-sm-12">
-            <!-- fix this and make it more concise -->
+                <!-- fix this and make it more concise -->
                 <div id="modalDiv" class="modal">
                     <div class="modalContent">
                         <div class="modalHeader">
-                            
-                            <h2 id="questionh2"> 
+
+                            <h2 id="questionh2">
                                 <!-- Displays question -->
                             </h2>
                         </div>
                         <div id="popUpBody">
                             <!-- Displays answer buttons -->
                         </div>
-                        <div id="gameOverDiv"><p></p></div>
+                        <div id="gameOverDiv">
+                            <p id=scoreHere></p>
+                            <div id="initialsInput">
+                                <form id="inputname" method="POST">
+                                    <h5>Type initials and press enter to save:</h5> <input type="text" placeholder="Enter Your Initials!"
+                                        name="initials" id="initials">
+                                </form>
+
+                            </div>
+
+                        </div>
                     </div>
-                </div>
-                </column>
-                <row>
-                    <column="col-sm-12">
-                    <!-- displays if answers are right or wrong/probably with else/if statement -->
-                    <div id="answerDisplay">
-                        <p></p>                        
-                    </div>
-                    
                     </column>
-                </row>
+                    <row>
+                        <column="col-sm-12">
+                            <!-- displays if answers are right or wrong/probably with else/if statement -->
+                            <div id="answerDisplay">
+                                <p></p>
+                            </div>
+                            <!-- <div id="saveScoresDiv">
+                        
+                    </div> -->
+                            <div id="highScoreDiv">
+                                <p></p>
+                                <button id="clearScores">Clear Scores</button>
+                                <button id="backToStart">Back to Start</button>
+                                <ul id="savedHighScores"></ul>
+                            </div>
+
+                            </column>
+                    </row>
     </row>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
