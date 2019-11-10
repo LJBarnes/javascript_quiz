@@ -88,6 +88,24 @@ function endOfGame() {
   popUpBody.style.display="none";
   answerDisplay.style.display="none";
   gameOverDiv.style.display="block";
+  gameOverDiv.textContent = "Your Score is: " + timeLeft;
+  // var initialInput = document.createElement("INPUT");
+  // initialInput.setAttribute("type", "text");
+  // initialInput.placeholder = "Type your initials here!";
+  // document.getElementById("gameOverDisplay").appendChild(initialInput);
+  var initials = document.createElement("INPUT");
+  initials.setAttribute("type", "text");
+  initials.setAttribute("class","initialInput");
+  initials.placeholder= "Type your initials here!"; 
+  document.getElementById("gameOverDiv").appendChild(initials);
+  var saveButton = document.createElement("Button");
+  document.getElementById("gameOverDiv").appendChild(saveButton);
+  saveButton.setAttribute("class", "saveButton");
+  saveButton.innerHTML = "Save Score";
+  // this runs choiceSelected() when a button is clicked--need to put in global scope?
+  // createButton.addEventListener('click', choiceSelected);
+
+
 }
 
 //DONE-set an event listener on the buttons to check for the correct answer
@@ -96,14 +114,14 @@ function endOfGame() {
 // DONE-but no matter what, go to the next question
 // DONE-- if there is no other question, or if the time has run out, then stop timer the game is over
 // DONE-when game is over display score and input box for user to put name and display go back button. 
-    // create a new div(#gaveOverDiv),
-    // grab new div in JS
-        // questionh2.style.display="none";
-        // popUpBody.style.display="none";
-        //  gameOverDiv.style.display="block";
+    // DONE-create a new div(#gaveOverDiv),
+    // DONE-grab new div in JS
+        // DONE-questionh2.style.display="none";
+        // DONE-popUpBody.style.display="none";
+        // DONE- gameOverDiv.style.display="block";
         // in endOfGame ()---
             // display score (timeLeft) and store it in local
-            // create an input field for initials
+            //DONE create an input field for initials
             // create a submit button
             // when SUBMIT store user's initials in local
 
