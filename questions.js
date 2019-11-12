@@ -17,13 +17,13 @@ var questions = [
       answer: "toLowerCase()"
     },
     {
-      title: "What is the HTML tag that allows you to write JavaScript? ",
-      choices: ["scripted", "script", "j", "javascripts"],
-      answer: "script"
+      title: "Where is the correct place to inset a Javascript? ",
+      choices: ["the body section", "the head section", "either section is correct"],
+      answer: "either section is correct"
     },
     {
-      title: "Some question here TBD",
-      choices: ["Answer", "Choice", "Right Answer", "Another Choice"],
-      answer: "Right Answer"
+      title: "How do you create a function in JavaScript?",
+      choices: ["function:myFunction", "function myFunction()", "myFunction Function()", "function=myFunction" ],
+      answer: "function myFunction()"
     },
   ];

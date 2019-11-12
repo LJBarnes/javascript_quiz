@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css" />
@@ -12,16 +13,16 @@
 
 <body>
     <row>
-        <column="col-sm-12">
+        <column class="col-sm-12">
             <div class="header">
-                <h5 class="highScoreView">View Highscores</h5>
+                <button id="highScores">View High Scores</button>
                 <h5 class="timeText">Time:</h5>
                 <h5 class="timer"></h5>
             </div>
-            </column>
+        </column>
     </row>
     <row>
-        <column="col-sm-12">
+        <column class="col-sm-12">
             <div class="quizStart">
                 <h2>Coding Quiz Challenge</h2>
                 <p> Try to answer the following code-related questions within the time limit. Keep in mind that the
@@ -29,51 +30,51 @@
                     answers will penalize your score/time by fifteen seconds!</p>
                 <button class="startButton">Start Quiz</button>
             </div>
-            </column>
-            <column="col-sm-12">
-                <!-- fix this and make it more concise -->
-                <div id="modalDiv" class="modal">
-                    <div class="modalContent">
-                        <div class="modalHeader">
+        </column>
+        <column class="col-sm-12">
+            <div id="modalDiv" class="modal">
+                <div class="modalContent">
+                    <div class="modalHeader">
 
-                            <h2 id="questionh2">
-                                <!-- Displays question -->
-                            </h2>
-                        </div>
-                        <div id="popUpBody">
-                            <!-- Displays answer buttons -->
-                        </div>
-                        <div id="gameOverDiv">
-                            <p id=scoreHere></p>
-                            <div id="initialsInput">
-                                <form id="inputname" method="POST">
-                                    <h5>Type initials and press enter to save:</h5> <input type="text" placeholder="Enter Your Initials!"
-                                        name="initials" id="initials">
-                                </form>
-
-                            </div>
-
-                        </div>
+                        <h2 id="questionh2">
+                            <!-- Displays question -->
+                        </h2>
                     </div>
-                    </column>
-                    <row>
-                        <column="col-sm-12">
-                            <!-- displays if answers are right or wrong/probably with else/if statement -->
-                            <div id="answerDisplay">
-                                <p></p>
-                            </div>
-                            <!-- <div id="saveScoresDiv">
-                        
-                    </div> -->
-                            <div id="highScoreDiv">
-                                <p></p>
-                                <button id="clearScores">Clear Scores</button>
-                                <button id="backToStart">Back to Start</button>
-                                <div id="savedHighScores"><p></p></div>
-                            </div>
+                    <div id="popUpBody">
+                        <!-- Displays answer buttons -->
+                    </div>
+                    <div id="gameOverDiv">
+                        <p id=scoreHere></p>
+                        <div id="initialsInput">
+                            <form id="inputname" method="POST">
+                                <h5>Type initials and press submit to save:</h5> <input type="text"
+                                    placeholder="Enter Your Initials!" name="initials" id="initials">
+                                <button id="initialSubmitButton">Submit</button>
+                            </form>
 
-                            </column>
-                    </row>
+                        </div>
+
+                    </div>
+                </div>
+        </column>
+        <row>
+            <column class="col-sm-12">
+                <!-- displays if answers are right or wrong/probably with else/if statement -->
+                <div id="answerDisplay">
+                    <p></p>
+                </div>
+            </column>
+        </row>
+        <row>
+            <column class="col-sm-12">
+                <div id="highScoreDiv" >
+                    <button id="clearScores">Clear Scores</button>
+                    <button id="backToStart">Back to Start</button>
+                    <div id="savedHighScores"></div>
+                </div>
+            
+            </column>
+        </row>
     </row>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

@@ -18,7 +18,7 @@
     text-align: center;
     margin: 0 auto;
     width: 400px;
-    height: 600px;
+    height: 400px;
     clear: both;
 }
 
@@ -36,7 +36,8 @@
     background-color: #fefefe;
     margin: 0 auto;
     width: 400px;
-    height: 600px;
+    height: 400px;
+    clear: both;
   }
 
   .answerBtn {
@@ -45,6 +46,7 @@
       margin-top: 5px;
       margin-bottom: 5px;
       display: block;
+      clear: both;
       
   }
 
@@ -57,6 +59,9 @@
     display: none;
     margin: 0 auto;
     text-align: center;
+    width: 400px;
+    height: 400px;
+    clear: both;
 }
 
 #scoreHere{
@@ -66,9 +71,15 @@
     font-size: 20px;
 }
 
+.disappear {
+    display: none;
+}
 
 #highScoreDiv {
-    display: none;
-
+    height: 400px;
+    width: 400px;
+    margin: 0 auto;
+    visibility: hidden;
+    text-align: center;
 }
   
