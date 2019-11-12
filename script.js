@@ -114,8 +114,9 @@ initialSubmitButton.addEventListener("click", function (event) {
     
     console.log(names);
 
-    storeInitials();
+    // storeInitials();
     renderInitials();
+
 });
 
 
@@ -124,29 +125,33 @@ initialSubmitButton.addEventListener("click", function (event) {
 
 
 function renderInitials() {
+    console.log("got to render");
     var storedNames = JSON.parse(localStorage.getItem("names"));
     highScoreDiv.style.visibility = "visible";
     questionh2.style.display = "none";
     popUpBody.style.display = "none";
     answerDisplay.style.display = "none";
     gameOverDiv.style.display = "none";
+    for (var i = 0; i < storedNames.length; i++) {
     // I know I need some kind of for loop to iterate through names, not sure how to implement or where/out of time for assignment
-    savedHighScores.textContent = "Name: " + storedNames[0].name + " Score: " + storedNames[0].score;
+    savedHighScores.textContent = "Name: " + storedNames[i].name + " Score: " + storedNames[i].score;
+};
     console.log(storedNames);
     console.log(storedNames.length);
+    
 }
 
 //Trying to set event listener to high score button but it keeps making it happen when I click start instead
 //  highScores.addEventListener("click", renderInitials);
 
 // This event listener isn't working either--for clear button--breaks start button/code 
-    clearScores.addEventListener("click", function () { 
-        names = "" });
+    // clearScores.addEventListener("click", function () { 
+    //     names = "" });
 
 
 // Fun...this one doesn't work either!
-        clearScores.addEventListener("click", function () { 
-            names = "" });    
+        // clearScores.addEventListener("click", function () { 
+        //     names = "" });    
 
 // Still need to add go back button/event listener but ran out of time
 
