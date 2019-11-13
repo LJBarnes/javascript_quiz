@@ -12,7 +12,7 @@ var gameOverDiv = document.querySelector("#gameOverDiv");
 var gameend = false;
 var inputBox = document.querySelector("#initials");
 var scoreHere = document.querySelector("#scoreHere");
-var names = [];
+var names;
 var initialSubmitButton = document.querySelector("#initialSubmitButton");
 var savedHighScores = document.querySelector("#savedHighScores");
 var highScoreDiv = document.querySelector("#highScoreDiv");
@@ -23,14 +23,14 @@ var clearScores = document.querySelector("#clearScores")
 startBtn.addEventListener("click", startQuiz);
 
 function startQuiz() {
-    
+
     gameend = false;
     var timeInterval = setInterval(function () {
         timer.textContent = ("Time: ") + timeLeft;
         timeLeft--;
         timeText.textContent = "";
 
-        
+
         if (timeLeft === 0) {
             timer.textContent = "Time: 0";
             clearInterval(timeInterval);
@@ -46,7 +46,7 @@ function startQuiz() {
 }
 
 function displayQuestion() {
-    
+
     var question = questions[questionIndex];
     questionDisplay.textContent = question.title;
     document.getElementById("popUpBody").textContent = "";
@@ -102,20 +102,23 @@ function endOfGame() {
 
 function storeInitials() {
     //stringify and set "names" in localStorage
-    localStorage.setItem("names", JSON.stringify(names));
+    var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
+    highscores.push(names)
+    localStorage.setItem("highscores", JSON.stringify(highscores));
+    renderInitials();
 }
 initialSubmitButton.addEventListener("click", function (event) {
     event.preventDefault();
     var initialText = inputBox.value.trim();
-    var initialsAndScore = {name:initialText, score:timeLeft};
+    var initialsAndScore = { name: initialText, score: timeLeft };
 
     //  add new initialText to names array
-    names.push(initialsAndScore);
-    
+    names = initialsAndScore;
+
     console.log(names);
 
-    // storeInitials();
-    renderInitials();
+    storeInitials();
+
 
 });
 
@@ -126,32 +129,33 @@ initialSubmitButton.addEventListener("click", function (event) {
 
 function renderInitials() {
     console.log("got to render");
-    var storedNames = JSON.parse(localStorage.getItem("names"));
+    var storedNames = JSON.parse(localStorage.getItem("highscores")) || [];
     highScoreDiv.style.visibility = "visible";
     questionh2.style.display = "none";
     popUpBody.style.display = "none";
     answerDisplay.style.display = "none";
     gameOverDiv.style.display = "none";
     for (var i = 0; i < storedNames.length; i++) {
-    // I know I need some kind of for loop to iterate through names, not sure how to implement or where/out of time for assignment
-    savedHighScores.textContent = "Name: " + storedNames[i].name + " Score: " + storedNames[i].score;
-};
+        savedHighScores.textContent += "| Name: " + storedNames[i].name + " Score: " + storedNames[i].score + " |" + "\n";
+    };
     console.log(storedNames);
     console.log(storedNames.length);
-    
+
 }
 
-//Trying to set event listener to high score button but it keeps making it happen when I click start instead
-//  highScores.addEventListener("click", renderInitials);
+//Need to set this up to display in div/hide others
+highScores.addEventListener("click", function (event) {
+    event.preventDefault();
+});
 
 // This event listener isn't working either--for clear button--breaks start button/code 
-    // clearScores.addEventListener("click", function () { 
-    //     names = "" });
+// clearScores.addEventListener("click", function () { 
+//     names = "" });
 
 
-// Fun...this one doesn't work either!
-        // clearScores.addEventListener("click", function () { 
-        //     names = "" });    
+// ...this one doesn't work either!
+// clearScores.addEventListener("click", function () { 
+//     names = "" });    
 
 // Still need to add go back button/event listener but ran out of time
 
